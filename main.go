@@ -32,8 +32,8 @@ func main() {
 
 	http.HandleFunc("/logs", handleWebSocket)
 
-	addr := fmt.Sprintf(":%d", *port)
-	log.Printf("Logs WebSocket server running at ws://localhost%s/logs", addr)
+	addr := fmt.Sprintf("0.0.0.0:%d", *port)
+	log.Printf("Logs WebSocket server running at ws://%s/logs", addr)
 	log.Fatal(http.ListenAndServe(addr, nil))
 }
 
